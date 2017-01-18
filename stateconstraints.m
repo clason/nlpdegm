@@ -8,7 +8,7 @@
 % using the approach described in the paper
 %  "Primal-dual extragradient methods for nonlinear nonsmooth 
 %   PDE-constrained optimization"
-% by Christian Clason and Tuomo Valkonen, http://arxiv.org/abs/1606.XXXXX.
+% by Christian Clason and Tuomo Valkonen, http://arxiv.org/abs/1606.06219.
 %
 % June 20, 2016              Christian Clason <christian.clason@uni-due.de>
 
