@@ -72,7 +72,7 @@ for it = 1:maxit
     % update forward operator
     A = fem.A(u);                 % differential operator
     try
-        R = chol(A); Rt=R';       % precompute Cholesky factors
+        R = chol(A); Rt=R';       % precompute Cholesky factors (faster)
         S = @(f) R\(Rt\f);        % (linearized) solution operator
     catch notspd
         S = @(f) A\f;             % fallback if numerically semidefinite

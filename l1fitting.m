@@ -36,7 +36,6 @@ n       = nel+1;              % number of nodes
 yd      = ye;                 % noisy data
 ind     = find(rand(n,1) < d_per);
 yd(ind) = ye(ind) + d_mag*max(abs(ye))*randn(length(ind),1);
-yd      = yd + 0.0*max(yd(:))*randn(n,1);
 delta   = norm(yd-ye,1)/n;    % compute noise level
 
 % show noisy data
@@ -81,7 +80,7 @@ for it = 1:maxit
     % update forward operator
     A = fem.A(u);                 % differential operator
     try
-        R = chol(A); Rt=R';       % precompute Cholesky factors; faster in 2D
+        R = chol(A); Rt=R';       % precompute Cholesky factors (faster)
         S = @(f) R\(Rt\f);        % (linearized) solution operator
     catch notspd
         S = @(f) A\f;             % fallback if numerically semidefinite
