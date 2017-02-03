@@ -16,7 +16,7 @@
 nel   = 1000;       % problem size: number of elements
 alpha = 1e-12;      % control cost parameter 
 gamma = 1e-12;      % Moreau-Yosida regularization parameter
-bg    = 1-1e-16;    % acceleration parameter \bar\gamma
+mu    = 1-1e-16;    % acceleration parameter \bar\mu
 maxit = 10000;      % maximal number of iterations
 
 %% Data
@@ -58,7 +58,7 @@ for it = 1:maxit
     u = 1/(1+tau)*(u-tau*P(y.*S(-M*p)));
     
     % (accelerated) extragradient
-    om  = 1/sqrt(1+2*bg*tau);
+    om  = 1/sqrt(1+2*mu*tau);
     tau = tau*om;  sigma = sigma/om;
     ub  = u + om*(u - uold);
     
