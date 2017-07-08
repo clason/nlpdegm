@@ -6,10 +6,13 @@ This repository contains Matlab codes accompanying the paper [Primal-dual extrag
 
 If you find this code useful, you can cite the paper as
 
-    @article{nonconvexswitching,
+    @article{nlpdhgm,
         author = {Clason, Christian and Valkonen, Tuomo}
         title = {Primal-dual extragradient methods for nonlinear nonsmooth PDE-constrained optimization},
-        eprinttype = {arxiv},
-        eprint = {1605.06219},
-        year = {2016}
+        journal = {SIAM Journal on Optimization},
+        volume = {27},
+	    number = {3},
+	    pages = {1314--1339},
+        year = {2017},
+        doi = {10.1137/16M1080859},
     }
